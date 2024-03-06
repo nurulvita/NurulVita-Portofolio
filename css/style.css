@@ -1,0 +1,731 @@
+/* ==========FONT GOOGLE========== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --latar_belakang: linear-gradient(to right, #000000 , #242e9c);
+    --gradient: linear-gradient(to right, #2ec4ff , #0a1480);
+    --navcolor: linear-gradient(to right, #000000 , #575ead, #000000);
+    --warna1: #fffffe;
+    --warna2: #a7a9be;
+    --warna3: black;
+    --warna4: rgba(0,212,255,1);
+    --warna5: #2f3abc57;
+    --warna6: #3881ff;
+    --warna7: #200d70;
+    --warna8: #1727d83b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: var(--warna1);
+    background: var(--latar_belakang);
+    overflow-x: hidden; 
+}
+
+/* ========== BAGIAN TAJUK ========== */
+.tajuk {
+    background: var(--navcolor);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+    line-height: 0;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tajuk span {
+    color: var(--warna4); 
+}
+
+.logo {
+    position: relative;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--warna1);
+    cursor: default;
+    opacity: 0;
+    animation: geserKanan 1s ease forwards;
+}
+
+.navigasi_bar a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: .3s;
+    margin: 30px;
+    font-weight: 500;
+    color: var(--warna1);
+    opacity: 0;
+    animation: geserAtas .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navigasi_bar a:hover {
+    color: var(--warna2);
+}
+
+/* ========== BAGIAN TAJUK ========== */
+
+/* ========== BAGIAN BERANDA ========== */
+.beranda {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    padding: 50px 10% 0;
+}
+
+.konten_beranda {
+    max-width: 900px;
+    position: relative;
+    object-fit: contain;
+}
+
+.konten_beranda img {
+    width: 700px;
+    position: absolute;
+    top: -200px;
+    left: 550px;
+    opacity: 0;
+    animation: geserKiri 1s ease forwards;
+    animation-delay: 2.5s;
+    object-fit: contain;
+}
+
+.konten_beranda h3 {
+    font-size: 35px;
+    font-weight: 700;
+    opacity: 0;
+    animation: geserBawah 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.konten_beranda h3 span {
+    color: var(--warna2);
+    font-weight: 700;
+}
+
+.konten_beranda h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: geserAtas 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.konten_beranda h1 {
+    font-size: 50px;
+    color: var(--warna4);
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: geserKanan 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.konten_beranda p {
+    font-size: 20px;
+    color: var(--warna1);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease forwards;
+    opacity: 0;
+    transform: translateX(100px);
+    animation-delay: 1s;
+    object-fit: contain;
+}
+
+.beranda_sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 2px solid var(--warna1);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--warna1);
+    text-decoration: none;
+    margin: 30px 10px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: geserKiri 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.beranda_sci a:hover {
+    background: var(--warna1);
+    color: var(--warna3);
+    box-shadow: 0 0 20px var(--warna2);
+}
+
+.tombol1 {
+    display: inline-block;
+    background: var(--warna1);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 45px;
+    font-size: 18px;
+    color: var(--warna3);
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0;
+    animation: geserAtas 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px var(--warna1) 0 0 25px var(--warna1);
+}
+
+.tombol1:hover {
+    box-shadow: 0 0 5px var(--warna1),
+        0 0 25px var(--warna1), 0 0 50px var(--warna1), 0 0 100px var(--warna1);
+}
+
+/* ========== BAGIAN BERANDA =========== */
+
+
+/* ========== BAGIAN KONTAK ========== */
+.kontak {
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 30px;
+    margin-top: 130px;
+}
+
+.teks_kontak h2 {
+    font-size: 90px;
+    line-height: 1;
+    align-items: center;
+}
+
+.teks_kontak h2 span {
+    color: var(--warna2);
+}
+
+.teks_kontak h4 {
+    margin: 15px 0;
+    color: var(--warna1);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.teks_kontak p {
+    color: var(--warna2);
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+
+.daftar_kontak {
+    margin-bottom: 3rem;
+}
+
+.daftar_kontak li {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.daftar_kontak i {
+    display: inline-block;
+    color: var(--warna2);
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .40s ease;
+}
+
+.daftar_kontak li a:hover {
+    transform: scale(1.01) translateY(-5px);
+    color: var(--warna2);
+}
+
+.ikon_kontak i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--warna2);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--warna2);
+    text-decoration: none;
+    margin: 30px 15px 10px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: geserKiri 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.ikon_kontak i:hover {
+    background: var(--warna1);
+    color: var(--warna3);
+    box-shadow: 0 0 20px var(--warna2);
+}
+
+.daftar_kontak i:hover {
+    background: var(--warna2);
+    color: var(--warna1);
+    box-shadow: 0 0 20px var(--warna2);
+}
+
+.formulir_kontak form {
+    position: relative;
+}
+
+.formulir_kontak form input,
+form textarea {
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 10px;
+    background: var(--warna3);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+}
+
+.formulir_kontak textarea {
+    resize: none;
+    height: 220px;
+}
+
+.formulir_kontak form .kirim {
+    display: inline-block;
+    padding: 14px 60px;
+    background: var(--warna1);
+    border-radius: 40px;
+    font-size: 18px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: geserAtas 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px var(--warna1), 0 0 25px var(--warna1);
+}
+
+.formulir_kontak form .kirim:hover {
+    box-shadow: 0 0 5px var(--warna1),
+        0 0 25px var(--warna1), 0 0 50px var(--warna1), 0 0 100px var(--warna1);
+}
+
+/* ========== BAGIAN KONTAK ========== */
+
+/* ========== BAGIAN TENTANG SAYA ========== */
+
+.tentang_saya {
+    display: grid;
+    background: linear-gradient(to right, var(--warna5), var(--warna4));
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    padding: 100px calc(10% - 20px) 0; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 1rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(27, 231, 231, 0.442);
+}
+
+.teks h1 {
+    font-size: 60px;
+    color: var(--warna7);
+}
+
+.teks h2 {
+    font-size: 60px;
+}
+
+.teks h2 span {
+    color: var(--warna2);
+}
+
+.teks h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--warna7);
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+.teks p {
+    color: var(--warna1);
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+/* ========== BAGIAN TENTANG SAYA ========== */
+
+
+/* ========== BAGIAN PENDIDIKAN ========== */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 30px;
+    /* padding-bottom: 10px; */
+}
+
+.background {
+    background: linear-gradient(to right, var(--warna7), var(--warna8));
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(27, 231, 231, 0.442);
+}
+
+.date {
+    font-style: italic;
+    color: #8baeb3;
+    text-align: left;
+}
+
+/* ========== BAGIAN PENDIDIKAN ========== */
+
+
+/* ========== BAGIAN Pendidikan =========== */
+.pendidikan {
+    color: var(--warna1);
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 10rem;
+}
+
+.sub_judul {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+}
+
+.sub_judul span {
+    color: #97e2ff;
+}
+
+.wadah {
+    padding: 30px;
+}
+
+.daftar_Pendidikan {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 600px));
+    grid-gap: 40px;
+    margin-left: 80px;
+}
+
+.daftar_Pendidikan div {
+    background-color: transparent;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 13px;
+    border-radius: 20px;
+    border-right: 10px;
+    transition: background .5s, transform .5s;
+    box-shadow: 1px 1px 20px var(--warna1), 1px 1px 30px var(--warna2);
+}
+
+.daftar_Pendidikan i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.daftar_Pendidikan div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.daftar_Pendidikan div a {
+    text-decoration: none;
+    color: var(--warna2);
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.baca {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--warna1);
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: geserAtas 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px var(--warna1), 0 0 25px var(--warna1);
+}
+
+
+.daftar_Pendidikan div:hover {
+    transform: translateY(-10px);
+}
+
+/* ========== BAGIAN PENDIDIKAN ========== */
+
+
+/* ========== BAGIAN PROJEK ========== */
+.teks_utama {
+    background-color: linear-gradient(to right, #54369f , #060e64);
+    padding-top: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+}
+
+.teks_utama h2 {
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+}
+
+.teks_utama h2 span {
+    color: var(--warna2);
+}
+
+.konten_projek {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(30px, auto));
+    gap: 10px;
+    margin: 30px 30px;
+}
+
+.baris {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.baris img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform .5s;
+}
+
+.lapisan {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.627), #fffffe);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: height .5s;
+}
+
+.lapisan h5 {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.lapisan p {
+    color: black;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.lapisan a {
+    text-decoration: none;
+}
+
+.lapisan i {
+    color: #ff004f;
+    margin-top: 20px;
+    font-size: 20px;
+    background: var(--warna2);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.baris:hover img {
+    transform: scale(1.1);
+}
+
+.baris:hover .lapisan {
+    height: 100%;
+}
+
+/* ========== BAGIAN PROJEK ========== */
+
+/* ========== BAGIAN SERTIFIKAT ========== */
+
+.sertifikat {
+    width: 100%;
+    height: 100%;
+    margin: 30px 30px 0 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    grid-template-columns: repeat(3, minmax(auto, auto));
+    background-color: #202c72;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+}
+
+.sertifikat img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform .5s;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--warna2);
+}
+
+.sertifikat img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--warna2);
+}
+
+.teks_sertifikat h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+    align-items: center;
+}
+
+.teks_sertifikat h2 span{
+    color: var(--warna2);
+}
+
+.teks_sertifikat h5{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    margin: 10px 0 10px;
+    text-align: center;
+    
+}
+
+.teks_sertifikat p{
+    color: black;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.konten_sertifikat {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, auto));
+    gap: 10px;
+    margin: 30px 0;
+    
+}
+
+/* ========== BAGIAN SERTIFIKAT ========== */
+
+
+/* ==========BAGIAN HAKCIPTA========== */
+.hak_cipta {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: var(--latar_belakang);
+    font-weight: 300;
+    margin-top: 70px;
+}
+
+/* ========== BAGIAN HAKCIPTA========== */
+
+/* ========== ANIMASI ========== */
+@keyframes geserKanan {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes geserKiri {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes geserAtas {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes geserBawah {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes teksMuncul {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes barGerak {
+    100% {
+        stroke-dashoffset: -1;
+    }
+}
+@media only screen and (max-width: 498px) {
+    .konten_sertifikat{
+        grid-template-columns: repeat(1, minmax(auto, auto));
+    }
+}
+/* ================================== */
